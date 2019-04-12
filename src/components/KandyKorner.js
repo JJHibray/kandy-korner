@@ -47,8 +47,11 @@ state = {
     render() {
         return (
             <article className="Kandy">
+            <h1>Candy!!!</h1>
             <CandyList candies={this.state.candies} />
+            <h1>Employees</h1>
             <EmployeeList employees={this.state.employees} />
+            <h1>Stores</h1>
             <StoreList stores={this.state.stores} />
             </article>
         )
