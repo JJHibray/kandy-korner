@@ -1,0 +1,30 @@
+{
+"stores": [
+    { "id": 1, "name": "Nashville" },
+    { "id": 2, "name": "East Nashville" },
+    { "id": 3, "name": "Chattanooga" },
+    { "id": 4, "name": "Memphis" }
+
+],
+
+"employees": [
+    { "id": 1, "name": "Lemony Snickets" },
+    { "id": 2, "name": "Broomhilda Korndog" },
+    { "id": 3, "name": "Smush Jaxon" },
+    { "id": 4, "name": "Peter Parker" }
+],
+
+
+"candyType": [
+    { "id": 1, "name": "Real Candy" },
+    { "id": 2, "name": "Fake Kandy" }
+],
+
+
+"candies": [
+    { "id": 1, "name": "Lemonheads", "candyTypeid": 1 },
+    { "id": 2, "name": "Snozberries", "candyTypeid": 2 },
+    { "id": 3, "name": "Turkish Delights", "candyTypeid": 1 },
+    { "id": 4, "name": "Runts", "candyTypeid": 1 }
+]
+}
