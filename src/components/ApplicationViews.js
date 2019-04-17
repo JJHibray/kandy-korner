@@ -3,6 +3,9 @@ import React, { Component } from "react"
 import CandyList from "./candy/CandyList";
 import EmployeeList from "./employees/EmployeeList"
 import StoreList from "./store/StoreList"
+import StoresManager from "../modules/StoresManager"
+import EmployeesManager from "../modules/EmployeesManager"
+import CandiesManager from "../modules/CandiesManager"
 
 
 
@@ -17,18 +20,35 @@ state = {
     }
 
 componentDidMount() {
-    const newState = {}
 
-    fetch("http://localhost:5002/stores")
-        .then(r => r.json())
-        .then(stores => newState.stores = stores)
-        .then(() => fetch("http://localhost:5002/employees")
-        .then(r => r.json()))
-        .then(employees => newState.employees = employees)
-        .then(() => fetch("http://localhost:5002/candies")
-        .then(r => r.json()))
-        .then(candies => newState.candies = candies)
-        .then(() => this.setState(newState))
+    StoresManager.getAll().then(allStores => {
+        this.setState({
+            stores: allStores
+        })
+    })
+    EmployeesManager.getAll().then(allemployees => {
+        this.setState({
+            employees: allemployees
+        })
+    })
+    CandiesManager.getAll().then(allcandies => {
+        this.setState({
+            candies: allcandies
+        })
+    })
+}
+
+deleteCandy = id => {
+    return fetch(`http://localhost:5002/candies/${id}`, {
+        method: "DELETE"
+    })
+    .then(e => e.json())
+    .then(() => fetch(`http://localhost:5002/candies`))
+    .then(e => e.json())
+    .then(candies => this.setState({
+        candies: candies
+    })
+  )
 }
 
     render() {
@@ -41,7 +61,8 @@ componentDidMount() {
                 return <EmployeeList employees={this.state.employees} />
                     }} />
                 <Route path="/candies" render={(props) => {
-                return <CandyList candies={this.state.candies} />
+                return <CandyList deleteCandy={this.deleteCandy}
+                candies={this.state.candies} />
                     }} />
             </React.Fragment>
         )
