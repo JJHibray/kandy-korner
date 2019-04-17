@@ -61,6 +61,25 @@
       "name": "Turkish Delights",
       "candyTypeid": 1
     },
-    { "id": 4, "name": "Runts", "candyTypeid": 1 }
+    {
+    "id": 4,
+    "name": "York Peppermint Patties",
+    "candyTypeid": 1
+    },
+    {
+    "id": 5,
+    "name": "Runts",
+    "candyTypeid": 1
+    },
+    {
+    "id": 6,
+    "name": "Mounds",
+    "candyTypeid": 1
+    },
+    {
+    "id": 7,
+    "name": "KitKat",
+    "candyTypeid": 1
+    }
   ]
 }

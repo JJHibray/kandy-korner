@@ -8,6 +8,9 @@ export default class CandyList extends Component {
             this.props.candies.map(candy =>
             <div key={candy.id}>
                 {candy.name}
+                <button
+                  onClick={() => this.props.deleteCandy(candy.id)}
+                  className="card-link">Delete</button>
                 </div>
             )
         }
